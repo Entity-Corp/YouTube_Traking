@@ -1,12 +1,12 @@
 # YouTube_Traking
 
-YouTube tracking project workspace.
+YouTube 추적 프로그램 프로젝트입니다.
 
-## Current Status
+## 현재 상태
 
-This repository has been prepared for source control and GitHub synchronization. At the time of repository initialization, no application source files were present in the project directory, so the functional documentation is limited to the repository structure and operating notes below.
+이 저장소는 GitHub 동기화와 향후 소스 관리를 위해 준비되었습니다. 현재 프로젝트 폴더에는 아직 실제 프로그램 소스가 없으므로, 기능 설명은 저장소 구조와 개발 기준 중심으로 작성되어 있습니다.
 
-## Repository Structure
+## 저장소 구조
 
 ```text
 .
@@ -16,35 +16,35 @@ This repository has been prepared for source control and GitHub synchronization.
 `-- .gitignore
 ```
 
-## Features
+## 주요 기능
 
-- GitHub-ready project structure
-- Project documentation entry point
-- User manual template for future application source
+- GitHub 기반 소스 관리
+- 프로젝트 문서 관리
+- 향후 프로그램 기능 및 사용자 매뉴얼 작성 기준 제공
 
-## Development Requirements
+## 개발 및 배포 기준
 
-- Target platform: Windows only
-- Runtime language: Python
-- Desktop UI framework: PySide6
-- Distribution format: Windows executable file for employees
-- Database connection:
-  - Use a Google Drive based `Config_DB.db` configuration database.
-  - Centralize database access through the shared `DB_conn.py` module.
+- 대상 운영체제: Windows 전용
+- 개발 언어: Python
+- 화면 프레임워크: PySide6
+- 배포 방식: 직원 사용을 위한 Windows 실행파일
+- DB 연결 방식:
+  - Google Drive 기반 `Config_DB.db` 설정 DB를 사용합니다.
+  - DB 연결은 공통 모듈인 `DB_conn.py`를 사용합니다.
 
-## Documentation
+## 문서
 
-- [Manual](docs/MANUAL.md)
+- [사용자 매뉴얼](docs/MANUAL.md)
 
-## Notes
+## 개발 메모
 
-When the completed application source is added to this directory, update this README with:
+완성된 프로그램 소스가 추가되면 이 문서에 아래 내용을 갱신합니다.
 
-- application purpose
-- installation requirements
-- configuration values
-- run/build/test commands
-- main screens or workflows
-- troubleshooting notes
+- 프로그램 목적
+- 설치 및 실행 방법
+- 설정값 설명
+- 빌드 및 테스트 방법
+- 주요 화면과 업무 흐름
+- 오류 처리 및 문제 해결 방법
 
-Keep database connection logic out of individual screens or feature modules. New code should call the common `DB_conn.py` module so connection behavior remains consistent across the packaged Windows executable.
+DB 연결 로직은 각 화면이나 기능 모듈에 개별로 작성하지 않습니다. 새 코드는 반드시 공통 `DB_conn.py` 모듈을 통해 DB에 접근해야 하며, 패키징된 Windows 실행파일에서도 동일한 연결 방식이 유지되어야 합니다.

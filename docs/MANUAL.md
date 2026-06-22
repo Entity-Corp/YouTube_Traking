@@ -1,55 +1,57 @@
-# YouTube_Traking Manual
+# YouTube_Traking 사용자 매뉴얼
 
-## Overview
+## 개요
 
-`YouTube_Traking` is the project repository for a YouTube tracking application. The repository is ready for GitHub synchronization, but the current workspace does not yet contain application source files.
+`YouTube_Traking`은 YouTube 관련 데이터를 추적하기 위한 Windows 전용 데스크톱 프로그램 프로젝트입니다. 프로그램은 Python과 PySide6 기반으로 작성하며, 직원들에게 Windows 실행파일 형태로 배포할 예정입니다.
 
-## Installation
+현재 저장소에는 아직 실제 프로그램 소스가 추가되지 않았습니다. 따라서 이 매뉴얼은 개발 및 운영 기준을 먼저 정리한 문서입니다.
 
-No installable application package or dependency manifest was found in the workspace yet.
+## 설치 및 실행
 
-This project is intended to be built as a Windows-only Python desktop application using PySide6, then distributed to employees as an executable file.
+아직 설치 가능한 프로그램 패키지나 의존성 파일은 없습니다.
 
-After adding source code, document the required setup here, for example:
+소스가 추가된 뒤에는 아래와 같은 실행 절차를 실제 프로젝트 기준으로 갱신합니다.
 
 ```powershell
-# Example only
+# 예시
 python -m venv .venv
 .\.venv\Scripts\pip install -r requirements.txt
 python main.py
 ```
 
-## Database Connection Policy
+직원 배포 시에는 개발 환경을 직접 구성하지 않고, 빌드된 Windows 실행파일을 실행하는 방식으로 사용할 예정입니다.
 
-The application must use a Google Drive based `Config_DB.db` configuration database.
+## DB 연결 정책
 
-All database connection logic should be implemented through the shared `DB_conn.py` module. Feature modules, screens, and worker classes should not create independent database connection code.
+프로그램의 DB 연결 설정은 Google Drive 기반 `Config_DB.db`를 사용합니다.
 
-## Basic Usage
+DB 연결 로직은 공통 모듈인 `DB_conn.py`에 모아서 관리합니다. 화면, 기능 모듈, 백그라운드 작업 클래스에서 독립적인 DB 연결 코드를 새로 만들지 않습니다.
 
-Application-specific usage cannot be verified until source files are added.
+## 기본 사용 방법
 
-Recommended manual sections to complete after source import:
+아직 실제 소스가 없으므로 프로그램 사용 절차는 확인할 수 없습니다.
 
-- Login or authentication flow
-- YouTube channel or video registration
-- Tracking interval and collection settings
-- Data export or reporting workflow
-- Error handling and recovery steps
+소스 추가 후 아래 항목을 기준으로 매뉴얼을 보강합니다.
 
-## Maintenance Workflow
+- 로그인 또는 인증 흐름
+- YouTube 채널 또는 영상 등록 방법
+- 추적 주기 및 수집 설정
+- 데이터 조회, 내보내기, 보고서 기능
+- 오류 발생 시 처리 방법
 
-1. Add or update source files in the project directory.
-2. Keep shared database access in `DB_conn.py`.
-3. Update `README.md` and this manual when behavior changes.
-4. Run the project test or build command.
-5. Build the Windows executable before employee distribution.
-6. Commit the verified changes.
-7. Push to the GitHub repository.
+## 유지보수 흐름
 
-## Troubleshooting
+1. 프로젝트 폴더에 소스 파일을 추가하거나 수정합니다.
+2. DB 연결은 `DB_conn.py` 공통 모듈에 유지합니다.
+3. 기능이 변경되면 `README.md`와 이 매뉴얼을 함께 갱신합니다.
+4. 테스트 또는 빌드 명령을 실행해 동작을 확인합니다.
+5. 직원 배포 전 Windows 실행파일을 빌드합니다.
+6. 검증된 변경사항을 Git에 커밋합니다.
+7. GitHub 저장소에 push합니다.
 
-- If the application does not start, check whether dependencies are installed.
-- If YouTube data cannot be collected, check API keys, quota limits, and network access.
-- If database connection fails, check Google Drive availability and the `Config_DB.db` path/configuration.
-- If GitHub synchronization fails, check Git authentication and remote repository permissions.
+## 문제 해결
+
+- 프로그램이 실행되지 않으면 필요한 의존성이 설치되어 있는지 확인합니다.
+- YouTube 데이터가 수집되지 않으면 API 키, 사용량 제한, 네트워크 상태를 확인합니다.
+- DB 연결이 실패하면 Google Drive 접근 상태와 `Config_DB.db` 경로 및 설정을 확인합니다.
+- GitHub 동기화가 실패하면 Git 인증 계정과 원격 저장소 권한을 확인합니다.
