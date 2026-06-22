@@ -1,0 +1,6 @@
+# Google Drive에 업로드된 Config_DB.db 파일 ID
+google_doc_key=
+
+# 기존 HD 도구 호환 설정
+Not_Charge_IDP=
+Not_PlaceofDuty=
